@@ -7,11 +7,11 @@
 class DB
 {
     private string $server = 'localhost';
-    private string $db = 'live';
+    private string $db = 'exo_192';
     private string $user = 'root';
     private string $pwd = '';
 
-    private static PDO $dbInstance;
+    private static ?PDO $dbInstance = null;
 
     /**
      * DbStatic constructor.
@@ -30,7 +30,7 @@ class DB
      * Return PDO instance.
      */
     public static function getInstance(): ?PDO {
-        if( is_null(self::$dbInstance) ) {
+        if(is_null(self::$dbInstance)) {
             new self();
         }
         return self::$dbInstance;

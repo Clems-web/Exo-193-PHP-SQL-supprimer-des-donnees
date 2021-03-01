@@ -10,3 +10,25 @@
  *    --> Finalement, vous décidez de supprimer complètement la table
  *    --> Et pour finir, comme vous n'avez plus de table dans la base de données, vous décidez de supprimer aussi la base de données.
  */
+
+require "./Classes/DB.php";
+
+$pdo = DB::getInstance();
+
+/*$request = "DELETE FROM exo_192.user WHERE id = 4";
+$pdo->exec($request);*/
+
+/*$request = "TRUNCATE TABLE user";
+$pdo->exec($request);*/
+
+/*$sql = " INSERT INTO exo_192.user(nom, prenom, rue, numero, code_postal, ville, pays, mail)
+        VALUES ('Caillou', 'Pierre', 'Rue des gravier', 15, 46589, 'Silex-City', 'Oreland', 'Jesuisuncaillou@gmail.com')
+";
+
+$pdo->exec($sql);*/
+
+/*$request = "TRUNCATE TABLE user";
+$pdo->exec($request);*/
+
+$request = "DROP DATABASE exo_192";
+$pdo->exec($request);
